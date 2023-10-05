@@ -1,6 +1,19 @@
 'use client'
 
+import { useState } from 'react'
+
 export default function FAQ({ faqs }) {
+  const [selectedCategory, setSelectedCategory] = useState('All')
+
+  function handleSelectCategory(event) {
+    setSelectedCategory(event.target.value)
+  }
+
+  const filteredItems =
+    selectedCategory === 'All'
+      ? faqs.items
+      : faqs.items.filter((item) => item.type === selectedCategory)
+
   return (
     <div>
       <div className="flex">
@@ -9,18 +22,16 @@ export default function FAQ({ faqs }) {
         </div>
         <div>
           <p> Filter by:</p>
-          <select>
-            <option value="0">All</option>
+          <select onChange={handleSelectCategory}>
+            <option value={'All'}>All</option>
             {faqs.categories.map((category, index) => (
-              <option key={index} value={index + 1}>
-                {category}
-              </option>
+              <option key={index} label={category} value={category}></option>
             ))}
           </select>
         </div>
       </div>
       <div>
-        {faqs.items.map((item, index) => (
+        {filteredItems.map((item, index) => (
           <div key={index}>
             <p>{item.type}</p>
             <p>{item.question}</p>
