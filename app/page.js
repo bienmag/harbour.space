@@ -1,3 +1,4 @@
+import About from '@/components/About'
 import FAQ from '@/components/FAQ'
 import Hero from '@/components/Hero'
 export const dynamic = 'force-dynamic'
@@ -23,9 +24,13 @@ export default async function Home() {
   const fetchedData = await fetchData()
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="bg-white flex min-h-screen flex-col items-center justify-between px-5 py-24">
       <div>
         <Hero data={fetchedData} />
+        <About
+          photo={fetchedData.scholarship.program.photos[0].src}
+          about={fetchedData.scholarship.about[0].data}
+        />
         <FAQ faqs={fetchedData.scholarship.faqs} />
       </div>
     </main>

@@ -13,6 +13,9 @@ module.exports = {
         gray: '#535353',
         lightgray: '#DADADA',
       },
+      backgroundImage: {
+        pattern: "url('../public/pattern-grid.svg')",
+      },
     },
   },
   plugins: [],
