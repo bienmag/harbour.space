@@ -61,12 +61,23 @@ export default function Hero({ data }) {
     )
   }
 
+  const Description = () => {
+    return (
+      <div>
+        <p>A fully funded work-study program to launch your tech career</p>
+        <p>{data.scholarship.description[0].data}</p>
+        <button>Apply Now</button>
+      </div>
+    )
+  }
+
   return (
     <div>
       <Name />
       <PoweredBy />
       <ApplicationCloses />
       <Info />
+      <Description />
     </div>
   )
 }
