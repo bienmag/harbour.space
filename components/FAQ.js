@@ -18,10 +18,28 @@ export default function FAQ({ faqs }) {
     }
   }
 
+  const PlusButton = () => {
+    return (
+      <div className="flex border-[1px] border-lightgray rounded-full h-5 w-5 p-4 items-center justify-center my-2">
+        <button className="text-gray text-2xl">+</button>
+      </div>
+    )
+  }
+
+  const MinusButton = () => {
+    return (
+      <div className="flex border-[1px] border-purple bg-purple  rounded-full h-5 w-5 p-4 items-center justify-center my-2">
+        <button className="text-white text-2xl">-</button>
+      </div>
+    )
+  }
+
   const filteredItems =
     selectedCategory === 'All'
       ? faqs.items
       : faqs.items.filter((item) => item.type === selectedCategory)
+
+  const isExpanded = (index) => expandedIndexes.includes(index)
 
   return (
     <div>
@@ -42,7 +60,10 @@ export default function FAQ({ faqs }) {
       <div>
         {filteredItems.map((item, index) => (
           <div onClick={() => expandAnswer(index)} key={index}>
-            <p className="text-gray font-semibold w-3/4">{item.question}</p>
+            <div>
+              <p className="text-gray font-semibold w-3/4">{item.question}</p>
+              {isExpanded(index) ? <MinusButton /> : <PlusButton />}
+            </div>
             {expandedIndexes.includes(index) && (
               <div className="py-4">
                 {item.answer.map((a, index) => (
