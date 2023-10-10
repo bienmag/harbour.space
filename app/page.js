@@ -24,7 +24,7 @@ export default async function Home() {
   const fetchedData = await fetchData()
 
   return (
-    <main className="bg-white flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="bg-white flex min-h-screen flex-col items-center justify-between px-5 py-24">
       <div>
         <Hero data={fetchedData} />
         <About
