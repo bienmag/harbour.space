@@ -1,6 +1,7 @@
 import About from '@/components/About'
 import FAQ from '@/components/FAQ'
 import Hero from '@/components/Hero'
+import Testimonials from '@/components/Testimonials'
 export const dynamic = 'force-dynamic'
 
 const fetchData = async () => {
@@ -24,13 +25,14 @@ export default async function Home() {
   const fetchedData = await fetchData()
 
   return (
-    <main className="bg-white flex min-h-screen flex-col items-center justify-between px-5 py-24">
+    <main className="bg-white flex min-h-screen flex-col items-center justify-between py-24">
       <div>
         <Hero data={fetchedData} />
         <About
           photo={fetchedData.scholarship.program.photos[0].src}
           about={fetchedData.scholarship.about[0].data}
         />
+        <Testimonials />
         <FAQ faqs={fetchedData.scholarship.faqs} />
       </div>
     </main>
