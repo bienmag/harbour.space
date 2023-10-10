@@ -1,5 +1,4 @@
 import Image from 'next/image'
-
 export default function About({ about, photo }) {
   const Picture = () => {
     return (
@@ -20,6 +19,7 @@ export default function About({ about, photo }) {
       </div>
     )
   }
+
   const AboutText = () => {
     return (
       <div className="border-[1px] border-lightgray h-[505px] p-6 ">
@@ -102,7 +102,11 @@ export default function About({ about, photo }) {
   }
 
   return (
-    <div>
+    <div className="flex flex-col">
+      <div>
+        <div className="absolute left-0 w-5 mt-40  bg-purple h-[320px]"></div>
+        <div className="absolute right-0 w-5 mt-40  bg-purple h-[320px]"></div>
+      </div>
       <Picture />
       <AboutText />
       <AboutNumbers />
