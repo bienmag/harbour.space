@@ -26,10 +26,23 @@ export default function Hero({ data }) {
     )
   }
 
+  const ApplicationCloses = () => {
+    return (
+      <div>
+        <div>
+          <p>Apllication closes in</p>
+          {/* expiration date is hardcoded as it's already expired in the api */}
+          <p>6 Day : 22 Hrs : 56 Min : 13 Sec</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div>
       <Name />
       <PoweredBy />
+      <ApplicationCloses />
     </div>
   )
 }
