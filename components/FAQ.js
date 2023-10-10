@@ -42,13 +42,13 @@ export default function FAQ({ faqs }) {
   const isExpanded = (index) => expandedIndexes.includes(index)
 
   return (
-    <div>
-      <div className="flex">
+    <div className="p-5">
+      <div className="">
         <div>
-          <h1>Frequently asked questions</h1>
+          <h1 className="text-3xl text-purple">Frequently Asked Questions</h1>
         </div>
-        <div>
-          <p> Filter by:</p>
+        <div className="pt-8">
+          <p className="text-gray"> Filter by:</p>
           <select onChange={handleSelectCategory}>
             <option value={'All'}>All</option>
             {faqs.categories.map((category, index) => (
