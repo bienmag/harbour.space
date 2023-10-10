@@ -4,9 +4,18 @@ import { useState } from 'react'
 
 export default function FAQ({ faqs }) {
   const [selectedCategory, setSelectedCategory] = useState('All')
+  const [expandedIndexes, setExpandedIndexes] = useState([])
 
-  function handleSelectCategory(event) {
+  const handleSelectCategory = (event) => {
     setSelectedCategory(event.target.value)
+  }
+
+  const expandAnswer = (index) => {
+    if (expandedIndexes.includes(index)) {
+      setExpandedIndexes(expandedIndexes.filter((i) => i !== index))
+    } else {
+      setExpandedIndexes([...expandedIndexes, index])
+    }
   }
 
   const filteredItems =
@@ -32,12 +41,15 @@ export default function FAQ({ faqs }) {
       </div>
       <div>
         {filteredItems.map((item, index) => (
-          <div key={index}>
-            <p>{item.type}</p>
-            <p>{item.question}</p>
-            {item.answer.map((a, index) => (
-              <p key={index}>{a.data}</p>
-            ))}
+          <div onClick={() => expandAnswer(index)} key={index}>
+            <p className="text-gray font-semibold w-3/4">{item.question}</p>
+            {expandedIndexes.includes(index) && (
+              <div className="py-4">
+                {item.answer.map((a, index) => (
+                  <p key={index}>{a.data}</p>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
