@@ -38,11 +38,35 @@ export default function Hero({ data }) {
     )
   }
 
+  const Info = () => {
+    return (
+      <div>
+        <div>
+          <p>Location</p>
+          <p>{data.scholarship.location.name}</p>
+        </div>
+        <div>
+          <p>Duration</p>
+          <p>{data.scholarship.duration} year</p>
+        </div>
+        <div>
+          <p>Start date</p>
+          <p>{data.scholarship.scholarship_start_date}</p>
+        </div>
+        <div>
+          <p>End date</p>
+          <p>{data.scholarship.application_end_date} year</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div>
       <Name />
       <PoweredBy />
       <ApplicationCloses />
+      <Info />
     </div>
   )
 }
