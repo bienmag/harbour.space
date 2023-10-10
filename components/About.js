@@ -20,10 +20,19 @@ export default function About({ about, photo }) {
       </div>
     )
   }
+  const AboutText = () => {
+    return (
+      <div className="border-[1px] border-lightgray h-[505px] p-6 ">
+        <h1 className="text-purple text-3xl my-4">About the apprenticeship</h1>
+        <p className="text-md text-gray ">{about}</p>
+      </div>
+    )
+  }
 
   return (
     <div>
       <Picture />
+      <AboutText />
     </div>
   )
 }
