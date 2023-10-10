@@ -102,7 +102,7 @@ export default function About({ about, photo }) {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col px-5">
       <div>
         <div className="absolute left-0 w-5 mt-40  bg-purple h-[320px]"></div>
         <div className="absolute right-0 w-5 mt-40  bg-purple h-[320px]"></div>

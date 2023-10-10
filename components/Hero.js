@@ -75,7 +75,7 @@ export default function Hero({ data }) {
   }
 
   return (
-    <>
+    <div className=" px-5">
       <div>
         <Name />
         <PoweredBy />
@@ -83,6 +83,6 @@ export default function Hero({ data }) {
         <Info />
         <Description />
       </div>
-    </>
+    </div>
   )
 }

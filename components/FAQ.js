@@ -42,7 +42,7 @@ export default function FAQ({ faqs }) {
   const isExpanded = (index) => expandedIndexes.includes(index)
 
   return (
-    <div className="p-5">
+    <div className="p-5 px-5">
       <div className="">
         <div>
           <h1 className="text-3xl text-purple">Frequently Asked Questions</h1>
