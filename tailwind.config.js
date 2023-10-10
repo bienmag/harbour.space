@@ -12,6 +12,7 @@ module.exports = {
         green: '#4FA16C',
         gray: '#535353',
         lightgray: '#DADADA',
+        verylightgray: '#FBFBFB',
       },
       backgroundImage: {
         pattern: "url('../public/pattern-grid.svg')",
