@@ -29,10 +29,36 @@ export default function About({ about, photo }) {
     )
   }
 
+  const AboutNumbers = () => {
+    return (
+      <div className="p-6">
+        <div className="py-2">
+          <p className="text-purple">Fellowship value</p>
+          <p className="text-gray text-xl">Eur 31,300</p>
+        </div>
+        <div className="flex justify-between py-2">
+          <div>
+            <p className="text-purple">Tuition covered</p>
+            <p className="text-gray text-xl">Eur 22,900</p>
+          </div>
+          <div>
+            <p className="text-purple">Remaining</p>
+            <p className="text-gray text-xl">Eur 8,400</p>
+          </div>
+        </div>
+        <div className="py-2">
+          <p className="text-purple">Living Stipend</p>
+          <p className="text-gray text-xl">Eur 8,400 (Eur 700/month)</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div>
       <Picture />
       <AboutText />
+      <AboutNumbers />
     </div>
   )
 }
