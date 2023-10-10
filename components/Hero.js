@@ -3,20 +3,21 @@ import Image from 'next/image'
 export default function Hero({ data }) {
   const Name = () => {
     return (
-      <div>
-        <h1>{data.scholarship.name}</h1>
+      <div className="pt-8">
+        <h1 className="text-purple text-3xl">{data.scholarship.name}</h1>
       </div>
     )
   }
 
   const PoweredBy = () => {
     return (
-      <div>
-        <div>
+      <div className="my-4 text-gray text-xs">
+        <div className="flex">
           <p>Powered by: </p>
-          <p>&nbsp;Zeptolab</p>
+          <p className="font-semibold">&nbsp;Zeptolab</p>
         </div>
         <Image
+          className="py-2"
           src={data.scholarship.company.color_logo.rawFile.preview}
           alt="company-logo"
           width={80}
@@ -25,14 +26,12 @@ export default function Hero({ data }) {
       </div>
     )
   }
-
   const ApplicationCloses = () => {
     return (
-      <div>
-        <div>
-          <p>Apllication closes in</p>
-          {/* expiration date is hardcoded as it's already expired in the api */}
-          <p>6 Day : 22 Hrs : 56 Min : 13 Sec</p>
+      <div className="border-[1px] border-lightgray h-20 my-4">
+        <div className="p-3">
+          <p className="text-purple">Apllication closes in</p>
+          <p className="text-gray">6 Day : 22 Hrs : 56 Min : 13 Sec</p>
         </div>
       </div>
     )
@@ -40,21 +39,21 @@ export default function Hero({ data }) {
 
   const Info = () => {
     return (
-      <div>
+      <div className="my-4 text-sm border-[1px] border-lightgray h-36 grid grid-cols-2 p-3  ">
         <div>
-          <p>Location</p>
+          <p className="text-purple">Location</p>
           <p>{data.scholarship.location.name}</p>
         </div>
         <div>
-          <p>Duration</p>
+          <p className="text-purple">Duration</p>
           <p>{data.scholarship.duration} year</p>
         </div>
         <div>
-          <p>Start date</p>
+          <p className="text-purple">Start date</p>
           <p>{data.scholarship.scholarship_start_date}</p>
         </div>
         <div>
-          <p>End date</p>
+          <p className="text-purple">End date</p>
           <p>{data.scholarship.application_end_date} year</p>
         </div>
       </div>
@@ -63,21 +62,27 @@ export default function Hero({ data }) {
 
   const Description = () => {
     return (
-      <div>
-        <p>A fully funded work-study program to launch your tech career</p>
-        <p>{data.scholarship.description[0].data}</p>
-        <button>Apply Now</button>
+      <div className="px-4">
+        <p className="text-gray font-semibold py-4">
+          A fully funded work-study program to launch your tech career
+        </p>
+        <p className="text-gray py-4">{data.scholarship.description[0].data}</p>
+        <button className="my-4 bg-purple text-white rounded-full  text-[10px] py-2 px-5">
+          Apply Now
+        </button>
       </div>
     )
   }
 
   return (
-    <div>
-      <Name />
-      <PoweredBy />
-      <ApplicationCloses />
-      <Info />
-      <Description />
-    </div>
+    <>
+      <div>
+        <Name />
+        <PoweredBy />
+        <ApplicationCloses />
+        <Info />
+        <Description />
+      </div>
+    </>
   )
 }
