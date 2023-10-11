@@ -41,7 +41,7 @@ export default function Testimonials() {
   return mobile ? (
     <div>
       <div className="bg-purple h-64">
-        <div className="bg-pattern h-64 w-3/4 stroke-[#1E1E1E] "></div>
+        <div className="bg-patterndark h-64 w-3/4 "></div>
       </div>
       <div className="px-5">
         <Card />
@@ -49,7 +49,7 @@ export default function Testimonials() {
     </div>
   ) : (
     <div>
-      <div className="bg-pattern h-64 w-3/4 mx-auto stroke-[#1E1E1E] "></div>
+      <div className="bg-patterndark h-64 w-3/4 mx-auto "></div>
       <div className="flex">
         <Card />
       </div>

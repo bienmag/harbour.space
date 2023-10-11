@@ -16,6 +16,7 @@ module.exports = {
       },
       backgroundImage: {
         pattern: "url('../public/pattern-grid.svg')",
+        patterndark: "url('../public/pattern-grid(dark).svg')",
       },
     },
   },
