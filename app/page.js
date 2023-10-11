@@ -13,7 +13,6 @@ const fetchData = async () => {
       throw new Error('Could not fetch the data')
     }
     const data = await response.json()
-    console.log('data', data)
     return data
   } catch (e) {
     console.log('Error fetching data:', e)
