@@ -77,7 +77,7 @@ export default function About({ about, photo }) {
     ) : (
       <div className="border-[1px] my-4 p-6 mx-4 border-lightgray grid grid-rows-2 ">
         <div className=" h-[200px]">
-          <p className="text-purple">Scholarship value</p>
+          <p className="text-purple pb-4">Scholarship value</p>
           <p className="text-3xl">Eur 31,300</p>
         </div>
         <div>
@@ -176,8 +176,8 @@ export default function About({ about, photo }) {
       <Graduation />
     </div>
   ) : (
-    <div className="p-24">
-      <div className="grid grid-cols-2 px-12 ">
+    <div className="pb-24 pl-24 pr-24">
+      <div className="grid grid-cols-2 px-16 ">
         <Picture />
         <AboutText />
       </div>

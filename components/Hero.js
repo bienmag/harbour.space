@@ -30,9 +30,9 @@ export default function Hero({ data }) {
   }
   const ApplicationCloses = () => {
     return (
-      <div className="border-[1px] border-lightgray h-20 my-4">
+      <div className="border-[1px] border-lightgray h-20 p-2 my-4">
         <div className="p-3">
-          <p className="text-purple">Apllication closes in</p>
+          <p className="text-purple text-sm ">Apllication closes in</p>
           <p className="text-gray">6 Day : 22 Hrs : 56 Min : 13 Sec</p>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default function Hero({ data }) {
 
   const Info = () => {
     return (
-      <div className=" my-4 text-sm border-[1px] border-lightgray h-36 grid grid-cols-2 p-3  ">
+      <div className=" my-4 text-sm border-[1px] border-lightgray h-36 grid grid-cols-2 p-6  ">
         <div>
           <p className="text-purple">Location</p>
           <p>{data.scholarship.location.name}</p>
@@ -79,7 +79,7 @@ export default function Hero({ data }) {
           A fully funded work-study program to launch your tech career
         </p>
         <p className="text-gray py-4">{data.scholarship.description[0].data}</p>
-        <button className="my-4 bg-purple text-white rounded-full  text-[10px] py-2 px-5">
+        <button className="my-4 bg-purple text-white rounded-full  text-[10px] py-2 px-6">
           Apply Now
         </button>
       </div>
@@ -102,11 +102,11 @@ export default function Hero({ data }) {
     </div>
   ) : (
     <div className="grid grid-cols-2 p-24">
-      <div className="px-12">
+      <div className="px-16">
         <Name />
         <Description />
       </div>
-      <div className="px-12">
+      <div className="px-16">
         <PoweredBy />
         <ApplicationCloses />
         {/* <div className="bg-pattern relative mt-16 h-52 w-3/4 mx-auto stroke-[#1E1E1E] "></div> */}
