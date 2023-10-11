@@ -1,4 +1,6 @@
+'use client'
 import Image from 'next/image'
+import { useViewport } from '@/lib/viewport'
 
 export default function Hero({ data }) {
   const Name = () => {
@@ -39,7 +41,7 @@ export default function Hero({ data }) {
 
   const Info = () => {
     return (
-      <div className="my-4 text-sm border-[1px] border-lightgray h-36 grid grid-cols-2 p-3  ">
+      <div className=" my-4 text-sm border-[1px] border-lightgray h-36 grid grid-cols-2 p-3  ">
         <div>
           <p className="text-purple">Location</p>
           <p>{data.scholarship.location.name}</p>
@@ -50,19 +52,29 @@ export default function Hero({ data }) {
         </div>
         <div>
           <p className="text-purple">Start date</p>
-          <p>{data.scholarship.scholarship_start_date}</p>
+          <p>30 November 2020</p>
         </div>
         <div>
           <p className="text-purple">End date</p>
-          <p>{data.scholarship.application_end_date} year</p>
+          <p>30 December 2020</p>
         </div>
       </div>
     )
   }
 
   const Description = () => {
-    return (
+    return mobile ? (
       <div className="px-4">
+        <p className="text-gray font-semibold py-4">
+          A fully funded work-study program to launch your tech career
+        </p>
+        <p className="text-gray py-4">{data.scholarship.description[0].data}</p>
+        <button className="my-4 bg-purple text-white rounded-full  text-[10px] py-2 px-5">
+          Apply Now
+        </button>
+      </div>
+    ) : (
+      <div>
         <p className="text-gray font-semibold py-4">
           A fully funded work-study program to launch your tech career
         </p>
@@ -74,14 +86,31 @@ export default function Hero({ data }) {
     )
   }
 
-  return (
-    <div className=" px-5">
+  const { width } = useViewport()
+  const breakpoint = 790
+  const mobile = width < breakpoint
+
+  return mobile ? (
+    <div className="pt-9 px-5">
       <div>
         <Name />
         <PoweredBy />
         <ApplicationCloses />
         <Info />
         <Description />
+      </div>
+    </div>
+  ) : (
+    <div className="grid grid-cols-2 p-24">
+      <div className="px-12">
+        <Name />
+        <Description />
+      </div>
+      <div className="px-12">
+        <PoweredBy />
+        <ApplicationCloses />
+        {/* <div className="bg-pattern relative mt-16 h-52 w-3/4 mx-auto stroke-[#1E1E1E] "></div> */}
+        <Info />
       </div>
     </div>
   )
