@@ -49,7 +49,7 @@ export default function Testimonials() {
     </div>
   ) : (
     <div>
-      <div className="bg-patterndark h-64 w-3/4 mx-auto "></div>
+      <div className="bg-pattern h-64 w-3/4 mx-auto "></div>
       <div className="flex">
         <Card />
       </div>
