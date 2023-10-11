@@ -75,7 +75,7 @@ export default function FAQ({ faqs }) {
   return mobile ? (
     <div className="px-5">
       <div>
-        <h1 className="text-3xl text-purple">Frequently Asked Questions</h1>
+        <h1 className="text-3xl text-purple">Frequently asked questions</h1>
       </div>
       <div className="pt-8">
         <p className="text-gray"> Filter by:</p>
@@ -156,7 +156,6 @@ export default function FAQ({ faqs }) {
             onClick={() => expandAnswer(index)}
             className="cursor-pointer"
           >
-            {/* <p className="text-purple">{item.type}</p> */}
             <div className="flex justify-between">
               <p className="text-gray font-semibold w-3/4">{item.question}</p>
               {isExpanded(index) ? <MinusButton /> : <PlusButton />}
@@ -175,13 +174,13 @@ export default function FAQ({ faqs }) {
     </div>
   ) : (
     <div className="p-24">
-      <div className="grid grid-cols-4">
-        <h1 className="text-3xl text-purple col-span-2">
+      <div className="grid grid-cols-3">
+        <h1 className="text-3xl col-span-1 text-purple  ">
           Frequently Asked Questions
         </h1>
-        <div className="flex col-span-2 items-center">
+        <div className="flex justify-end col-span-2 items-center">
           <p className="text-gray pr-4"> Filter by:</p>
-          <div className="relative w-3/4">
+          <div className="relative w-1/2">
             <div className="relative z-10">
               <div className="w-full relative">
                 <div className="w-full">
@@ -257,6 +256,8 @@ export default function FAQ({ faqs }) {
         </div>
       </div>
       <div className="pt-8">
+        <hr className="border-t-[1px] my-5 border-lightgray" />
+
         {filteredItems.map((item, index) => (
           <div
             key={index}
@@ -277,7 +278,7 @@ export default function FAQ({ faqs }) {
                   </div>
                 </div>
                 {expandedIndexes.includes(index) && (
-                  <div className="py-4 pr-28">
+                  <div className="py-4 pr-40">
                     {item.answer.map((a, index) => (
                       <p key={index}>{a.data}</p>
                     ))}
